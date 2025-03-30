@@ -8,6 +8,7 @@
     "boost-filesystem",
     "boost-multiprecision",
     "boost-system",
+    "boost-test",
     {
       "name": "vcpkg-cmake",
       "host": true
