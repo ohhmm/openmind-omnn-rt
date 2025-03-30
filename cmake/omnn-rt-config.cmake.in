@@ -1,0 +1,12 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+find_dependency(Boost REQUIRED COMPONENTS filesystem system)
+
+if(@OPENMIND_RT_USE_OPENCL@)
+    find_dependency(OpenCL REQUIRED)
+    find_dependency(Boost REQUIRED COMPONENTS compute)
+endif()
+
+include("${CMAKE_CURRENT_LIST_DIR}/omnn-rt-targets.cmake")

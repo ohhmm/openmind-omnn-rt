@@ -49,3 +49,32 @@ install(DIRECTORY omnn/
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/omnn
         FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp" PATTERN "*.inc"
 )
+
+# Export targets
+install(
+    EXPORT omnn-rt-targets
+    FILE omnn-rt-targets.cmake
+    NAMESPACE omnn::
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/omnn-rt
+)
+
+# Create and install package configuration files
+include(CMakePackageConfigHelpers)
+configure_package_config_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/omnn-rt-config.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/omnn-rt-config.cmake
+    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/omnn-rt
+)
+
+write_basic_package_version_file(
+    ${CMAKE_CURRENT_BINARY_DIR}/omnn-rt-config-version.cmake
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY SameMajorVersion
+)
+
+install(
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/omnn-rt-config.cmake
+        ${CMAKE_CURRENT_BINARY_DIR}/omnn-rt-config-version.cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/omnn-rt
+)
