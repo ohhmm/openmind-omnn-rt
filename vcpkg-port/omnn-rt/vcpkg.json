@@ -1,0 +1,29 @@
+{
+  "name": "omnn-rt",
+  "version": "0.1.0",
+  "description": "Runtime utilities from OpenMind Neural Networks",
+  "homepage": "https://github.com/ohhmm/openmind-omnn-rt",
+  "license": "MIT",
+  "dependencies": [
+    "boost-filesystem",
+    "boost-multiprecision",
+    "boost-system",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ],
+  "features": {
+    "opencl": {
+      "description": "Enable OpenCL support",
+      "dependencies": [
+        "opencl",
+        "boost-compute"
+      ]
+    }
+  }
+}
