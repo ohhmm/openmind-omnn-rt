@@ -11,6 +11,7 @@
     "boost-system",
     "boost-test",
     "boost-iostreams",
+    "boost-tokenizer",
     {
       "name": "vcpkg-cmake",
       "host": true
