@@ -18,6 +18,9 @@
       "host": true
     }
   ],
+  "dev-dependencies": [
+    "boost-test"
+  ],
   "features": {
     "opencl": {
       "description": "Enable OpenCL support",
