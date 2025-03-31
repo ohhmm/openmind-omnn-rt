@@ -23,7 +23,10 @@ option(OPENMIND_RT_USE_OPENCL "Use OpenCL calculations" OFF)
 set(OPENMIND_RT_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Find dependencies
-find_package(Boost REQUIRED COMPONENTS filesystem system unit_test_framework)
+find_package(Boost REQUIRED COMPONENTS filesystem system)
+if(OPENMIND_RT_BUILD_TESTS)
+    find_package(Boost REQUIRED COMPONENTS unit_test_framework)
+endif()
 # Boost multiprecision is header-only and doesn't need a separate component
 
 if(OPENMIND_RT_USE_OPENCL)
