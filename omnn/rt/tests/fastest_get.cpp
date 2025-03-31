@@ -1,6 +1,5 @@
 #define BOOST_TEST_MODULE Fastest Get test
 #define BOOST_TEST_DYN_LINK
-#define BOOST_AUTO_TEST_MAIN
 #include <boost/test/unit_test.hpp>
 #include "../fastest.hpp"
 #include <atomic>
