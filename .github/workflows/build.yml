@@ -59,6 +59,10 @@ jobs:
 
     - name: Install dependencies (Windows)
       if: runner.os == 'Windows'
+      run: |
+        choco install ninja cmake
+        cmake --version
+        ninja --version
       uses: microsoft/setup-msbuild@v2
       
     - name: Setup vcpkg
