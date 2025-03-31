@@ -63,6 +63,9 @@ jobs:
         choco install ninja cmake
         cmake --version
         ninja --version
+
+    - name: Setup MSBuild (Windows)
+      if: runner.os == 'Windows'
       uses: microsoft/setup-msbuild@v2
       
     - name: Setup vcpkg
